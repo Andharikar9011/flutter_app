@@ -4,12 +4,12 @@ import 'package:appcenter_analytics/appcenter_analytics.dart';
 import 'package:appcenter_crashes/appcenter_crashes.dart';
 
 
-final ios = defaultTargetPlatform == TargetPlatform.iOS;
 
+
+Future<void> main() async {
 var app_secret =  "e28083ec-7390-4a29-a803-2dd159910ed0";
 await AppCenter.start(app_secret, [AppCenterAnalytics.id, AppCenterCrashes.id]);
-void main() {
-  runApp(MyApp());
+runApp(MyApp());
 }
 class MyApp extends StatefulWidget {
 @override
@@ -20,6 +20,7 @@ State<StatefulWidget> createState(){
 }
 class _MyAppState extends State<MyApp> {
 	List<String> _products = ['Food Tester'];
+
 @override
 Widget build(BuildContext context){
 return MaterialApp(
